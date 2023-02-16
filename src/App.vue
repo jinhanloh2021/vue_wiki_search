@@ -1,30 +1,41 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view />
+  <h1 class="myh1">Hello world</h1>
+  <span>
+    <h1 class="myh1">Nested H1</h1>
+  </span>
+  <Header title="My Title" />
 </template>
+
+<script lang="ts">
+import Header from "./components/Header.vue";
+export default {
+  name: "App",
+  components: { Header },
+};
+</script>
 
 <style lang="scss">
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: inter, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  box-sizing: border-box;
 }
 
-nav {
-  padding: 30px;
+html {
+  font-size: 10px;
+}
+</style>
+<style lang="scss" scoped>
+h1 {
+  color: green;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+span {
+  h1 {
+    color: purple;
   }
 }
 </style>
