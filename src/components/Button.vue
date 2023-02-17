@@ -1,25 +1,26 @@
 <template>
-  <button @click="onClick()">Click Me</button>
+  <button @click="onClick()">{{ text }}</button>
   <p>{{ num }}</p>
 </template>
 <script lang="ts">
-export default {
+import { defineComponent } from "vue";
+//Need to use defineComponent to enable type inference
+export default defineComponent({
   name: "Button",
   props: {
     text: String,
-  },
-  methods: {
-    onClick() {
-      console.log("Clicked");
-      this.num++;
-    },
   },
   data() {
     return {
       num: 0,
     };
   },
-};
+  methods: {
+    onClick(): void {
+      this.num++;
+    },
+  },
+});
 </script>
 <style lang="scss">
 div {

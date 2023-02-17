@@ -4,13 +4,20 @@
     <h1 class="myh1">Nested H1</h1>
   </span>
   <Header title="My Title" />
+  <ListRender v-bind:list="list" />
 </template>
 
 <script lang="ts">
 import Header from "./components/Header.vue";
+import ListRender from "./components/ListRender.vue";
 export default {
   name: "App",
-  components: { Header },
+  components: { Header, ListRender },
+  data() {
+    return {
+      list: ["Cat", "Dog", "Squirrel", "Monkey", "Kangaroo"],
+    };
+  },
 };
 </script>
 

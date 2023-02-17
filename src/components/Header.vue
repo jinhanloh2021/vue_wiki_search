@@ -1,6 +1,6 @@
 <template>
   <div>{{ title }}</div>
-  <Button />
+  <Button text="My Button" />
 </template>
 
 <script lang="ts">
